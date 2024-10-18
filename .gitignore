@@ -1,0 +1,10 @@
+# System generated files
+.DS_Store
+
+# Temporary files
+*.swp
+*.tmp
+
+# IDE specific files
+.idea/
+.vscode/
