@@ -8,3 +8,4 @@
 # IDE specific files
 .idea/
 .vscode/
+.vsconfig
