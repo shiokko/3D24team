@@ -24,15 +24,24 @@ public class CattleWandering : MonoBehaviour
     // Flag to indicate if the cattle is wandering
     private bool isWandering;
 
+    // Flag to indicate if the cattle is killed
+    public bool isKilled;
+
     void Start()
     {
+        isKilled = false;
+        isWandering = false;
         movementDirection = Vector2.zero;
         wanderTimer = 0f;
-        isWandering = false;
     }
 
     void FixedUpdate()
     {
+        if (isKilled)
+        {
+            return;
+        }
+
         // Update the wandering timer
         wanderTimer += Time.fixedDeltaTime;
 

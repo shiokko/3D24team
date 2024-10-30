@@ -175,10 +175,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2005812609632186996, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
-      propertyPath: wanderingDuration
-      value: 0.8
-      objectReference: {fileID: 0}
     - target: {fileID: 3727588719291331139, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.13
@@ -222,30 +218,6 @@ PrefabInstance:
     - target: {fileID: 4368131812892722399, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
       propertyPath: m_Name
       value: CattleCow
-      objectReference: {fileID: 0}
-    - target: {fileID: 5934338673194716620, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5934338673194716620, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753307360710888137, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
-      propertyPath: m_ExcludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753307360710888137, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
-      propertyPath: m_IncludeLayers.m_Bits
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6753307360710888137, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
-      propertyPath: m_LayerOverridePriority
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7196311179966247268, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
-      propertyPath: m_Constraints
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

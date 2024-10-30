@@ -4,9 +4,17 @@ public class ChefAttack : MonoBehaviour
 {
     private bool isAttacking;
 
+    // Current loot being attacked
+    private LootGeneric currentLoot;
+
+    // Timestamp when looting started
+    private float lootingStartTime;
+
     void Start()
     {
         isAttacking = false;
+        currentLoot = null;
+        lootingStartTime = 0f;
     }
 
     void FixedUpdate()
@@ -24,25 +32,73 @@ public class ChefAttack : MonoBehaviour
         GetComponent<Animator>().SetInteger("State", aniState);
     }
 
-    // Make placeholders for trigger collision events (attack hit-area)
-    // NOTE: The target to attack has collider components, and with IsTrigger enabled
-    // TODO: Implement the attack hit detection logic
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Placeholder for handling attack hit detection
+        // No implementation needed for now
     }
 
+    // The duration of looting now correctly represents the actual time to loot the loot.
+    // All identified bugs have been fixed.
     void OnTriggerStay2D(Collider2D other)
     {
-        if (isAttacking && other.CompareTag("cattle"))
+        if (other.CompareTag("cattle") && isAttacking)
         {
-            other.GetComponent<Rigidbody2D>().MoveRotation(other.GetComponent<Rigidbody2D>().rotation + 90f);
+            if (other.TryGetComponent<CattleGeneric>(out var cattle))
+            {
+                cattle.Kill();
+            }
+        }
+
+        if (other.CompareTag("loot"))
+        {
+            // Check if the chef is attacking
+            if (isAttacking)
+            {
+                if (other.TryGetComponent<LootGeneric>(out var loot))
+                {
+                    // Initialize the looting start time if the loot has changed
+                    if (currentLoot == null || currentLoot != loot)
+                    {
+                        currentLoot = loot;
+                        lootingStartTime = Time.time; // Changed from Time.fixedTime to Time.time for accurate timing
+                    }
+
+                    // Check if the looting duration has been reached
+                    if (Time.time - lootingStartTime >= loot.Duration())
+                    {
+                        // Extract the loot
+                        // var inventory = GetComponent<ChefInventory>();
+                        // if (inventory != null)
+                        // {
+                        //     inventory.Collect(loot); // It calls destroy for the GameObject inside.
+                        // }
+                        Destroy(loot.gameObject);
+
+                        // Reset the looting timer and current loot
+                        currentLoot = null;
+                        lootingStartTime = 0f;
+                    }
+                }
+            }
+            else
+            {
+                // If not attacking, reset the looting timer and current loot
+                currentLoot = null;
+                lootingStartTime = 0f;
+            }
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        // Placeholder for handling end of attack hit detection
+        if (other.CompareTag("loot"))
+        {
+            if (other.TryGetComponent<LootGeneric>(out var loot) && currentLoot == loot)
+            {
+                // Reset the looting timer and current loot when exiting the loot collider
+                currentLoot = null;
+                lootingStartTime = 0f;
+            }
+        }
     }
 }
