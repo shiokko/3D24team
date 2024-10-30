@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ChefMovementScene1 : MonoBehaviour
+public class ChefMovement : MonoBehaviour
 {
     // Movement speed of the chef
     [SerializeField]
@@ -20,7 +20,7 @@ public class ChefMovementScene1 : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");     // W/S or Up/Down arrows
 
         // Get animator parameters
-        int state = GetComponent<Animator>().GetInteger("State");
+        int aniState = GetComponent<Animator>().GetInteger("State");
 
         // Get sprite renderer
         var sprite = GetComponent<SpriteRenderer>();
@@ -38,7 +38,7 @@ public class ChefMovementScene1 : MonoBehaviour
         sprite.flipX = movement.x == 0 ? sprite.flipX : movement.x < 0;
 
         // Specify the movement animation based on the velocity
-        state = movement.magnitude > 0f ? (state == 0 ? 1 : state) : 0;
+        aniState = movement.magnitude > 0f ? (aniState == 0 ? 1 : aniState) : (aniState == 1 ? 0 : aniState);
 
         // Calculate the new position
         Vector3 newPosition = GetComponent<Rigidbody2D>().position + moveSpeed * Time.fixedDeltaTime * movement;
@@ -47,6 +47,6 @@ public class ChefMovementScene1 : MonoBehaviour
         GetComponent<Rigidbody2D>().MovePosition(newPosition);
 
         // Update the animator parameters
-        GetComponent<Animator>().SetInteger("State", state);
+        GetComponent<Animator>().SetInteger("State", aniState);
     }
 }
