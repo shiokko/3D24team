@@ -2,13 +2,20 @@ using UnityEngine;
 
 public class ChefAttack : MonoBehaviour
 {
-    void Update()
+    private bool isAttacking;
+
+    void Start()
+    {
+        isAttacking = false;
+    }
+
+    void FixedUpdate()
     {
         // Get animator parameters
         int aniState = GetComponent<Animator>().GetInteger("State");
 
         // Press K to attack with the chef
-        bool isAttacking = Input.GetKey(KeyCode.K);
+        isAttacking = Input.GetKey(KeyCode.K);
 
         // Specify the attack animation based on the attack state
         aniState = isAttacking ? 2 : (aniState == 2 ? 1 : aniState);
@@ -28,7 +35,10 @@ public class ChefAttack : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        // Placeholder for handling continuous attack hit detection
+        if (isAttacking && other.CompareTag("cattle"))
+        {
+            other.GetComponent<Rigidbody2D>().MoveRotation(other.GetComponent<Rigidbody2D>().rotation + 90f);
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
