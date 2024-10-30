@@ -37,13 +37,14 @@ public class ChefMovement : MonoBehaviour
         sprite.flipX = movement.x == 0 ? sprite.flipX : movement.x < 0;
 
         // Specify the movement animation based on the velocity
-        aniState = movement.magnitude > 0f ? (aniState == 0 ? 1 : aniState) : (aniState == 1 ? 0 : aniState);
+        aniState = movement.magnitude > 0.25f ? (aniState == 0 ? 1 : aniState) : (aniState == 1 ? 0 : aniState);
 
         // Calculate the new position
-        Vector3 newPosition = GetComponent<Rigidbody2D>().position + moveSpeed * Time.fixedDeltaTime * movement;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        Vector3 newPosition = rb.position + moveSpeed * Time.fixedDeltaTime * movement;
 
         // Move the Rigidbody2D to the new position while respecting collisions
-        GetComponent<Rigidbody2D>().MovePosition(newPosition);
+        rb.MovePosition(newPosition);
 
         // Update the animator parameters
         GetComponent<Animator>().SetInteger("State", aniState);
