@@ -19,5 +19,4 @@ public class ChefInventory : MonoBehaviour
     {
         lootList.Add(loot);
     }
-
 }

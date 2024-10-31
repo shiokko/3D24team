@@ -3,17 +3,13 @@ using UnityEngine;
 public class CattleWandering : MonoBehaviour
 {
     // Movement speed of the cattle
-    [SerializeField]
-    private float moveSpeed;
+    public float moveSpeed;
 
     // Duration of wandering in seconds
-    [SerializeField]
-    private float wanderingDuration;
+    public float wanderingDuration;
 
     // Probability to decide to wander after duration
-    [SerializeField]
-    [Range(0f, 1f)]
-    private float wanderProbability;
+    public float wanderProbability;
 
     // Current timer for wandering duration
     private float wanderTimer;
@@ -24,12 +20,8 @@ public class CattleWandering : MonoBehaviour
     // Flag to indicate if the cattle is wandering
     private bool isWandering;
 
-    // Flag to indicate if the cattle is killed
-    public bool isKilled;
-
     void Start()
     {
-        isKilled = false;
         isWandering = false;
         movementDirection = Vector2.zero;
         wanderTimer = 0f;
@@ -37,7 +29,7 @@ public class CattleWandering : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isKilled)
+        if (GetComponent<CattleGeneric>().isKilled)
         {
             return;
         }
@@ -48,7 +40,7 @@ public class CattleWandering : MonoBehaviour
         if (wanderTimer >= wanderingDuration)
         {
             // Attempt to wander based on probability
-            isWandering = Random.value < wanderProbability;
+            isWandering = !isWandering && Random.value < wanderProbability;
 
             // Randomize the movement direction
             movementDirection = isWandering ? Random.insideUnitCircle.normalized : Vector2.zero;

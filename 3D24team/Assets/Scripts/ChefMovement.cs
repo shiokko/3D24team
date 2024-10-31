@@ -3,11 +3,15 @@ using UnityEngine;
 public class ChefMovement : MonoBehaviour
 {
     // Movement speed of the chef
-    [SerializeField]
-    private float moveSpeed;
+    public float moveSpeed;
 
     // Movement input vector
-    private Vector2 movement = Vector3.zero;
+    private Vector2 movement;
+
+    void Start()
+    {
+        movement = Vector2.zero;
+    }
 
     // FixedUpdate is called at a fixed interval and is used for physics calculations
     void FixedUpdate()
