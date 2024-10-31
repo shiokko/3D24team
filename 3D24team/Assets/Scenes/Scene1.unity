@@ -177,7 +177,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3727588719291331139, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 3727588719291331139, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
       propertyPath: m_LocalPosition.y
@@ -364,7 +364,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -418,7 +418,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 0
+  m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &209137939
@@ -2503,7 +2503,7 @@ EdgeCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -2713,18 +2713,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2005812609632186996, guid: 39c1f4dbe7b134de19ccf137e5942ae6, type: 3}
-      propertyPath: moveSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2005812609632186996, guid: 39c1f4dbe7b134de19ccf137e5942ae6, type: 3}
-      propertyPath: wanderProbability
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2005812609632186996, guid: 39c1f4dbe7b134de19ccf137e5942ae6, type: 3}
-      propertyPath: wanderingDuration
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 3727588719291331139, guid: 39c1f4dbe7b134de19ccf137e5942ae6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.18

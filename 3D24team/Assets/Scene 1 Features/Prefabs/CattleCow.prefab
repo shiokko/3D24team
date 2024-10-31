@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2005812609632186996}
   - component: {fileID: 1582876954043682924}
   - component: {fileID: 3906071922961411527}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CattleCow
   m_TagString: cattle
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   wanderingDuration: 0.8
-  wanderProbability: 0.25
+  wanderProbability: 0.2
 --- !u!114 &1582876954043682924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isKilled: 0
+  lootName: beef
 --- !u!114 &3906071922961411527
 MonoBehaviour:
   m_ObjectHideFlags: 0

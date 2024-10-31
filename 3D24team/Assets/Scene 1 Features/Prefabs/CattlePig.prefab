@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2005812609632186996}
   - component: {fileID: 1582876954043682924}
   - component: {fileID: 3906071922961411527}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CattlePig
   m_TagString: cattle
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 359246447
   m_SortingLayer: 3
-  m_SortingOrder: 55
+  m_SortingOrder: 44
   m_Sprite: {fileID: 21300000, guid: 0206dfbd82753ea42bff2c1b0a56966d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -172,7 +172,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -210,7 +210,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4368131812892722399}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -241,9 +241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505a1fca897784ccfa9f99c4ff53318f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2.5
+  moveSpeed: 3
   wanderingDuration: 0.6
-  wanderProbability: 0.25
+  wanderProbability: 0.2
 --- !u!114 &1582876954043682924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a827563fa3f74cdf8201796ba8cc71f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKilled: 1
+  isKilled: 0
+  lootName: pork
 --- !u!114 &3906071922961411527
 MonoBehaviour:
   m_ObjectHideFlags: 0

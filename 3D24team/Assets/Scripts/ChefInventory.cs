@@ -1,22 +1,41 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Text;
 
 public class ChefInventory : MonoBehaviour
 {
-    private List<LootGeneric> lootList;
+    private List<string> loots;
 
-    public List<LootGeneric> LootList()
+    public List<string> Loots()
     {
-        return lootList;
+        return loots;
     }
 
     void Start()
     {
-        lootList = new List<LootGeneric>();
+        loots = new List<string>();
     }
 
-    public void Collect(LootGeneric loot)
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Print the collected loots
+
+            var str = new StringBuilder("Loots: [");
+            foreach (var loot in loots)
+            {
+                str.Append(loot);
+                str.Append(", ");
+            }
+            str.Remove(str.Length - 2, 2);
+            str.Append("]");
+            Debug.Log(str.ToString());
+        }
+    }
+
+    public void AddLoot(string lootName)
     {
-        lootList.Add(loot);
+        // Add the loot name to the inventory
+        loots.Add(lootName);
     }
 }

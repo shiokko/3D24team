@@ -1,20 +1,21 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ChefAttack : MonoBehaviour
 {
     private bool isAttacking;
 
-    // Current loot being attacked
-    private LootGeneric currentLoot;
+    // Current loots being attacked
+    private List<LootGeneric> currentLoots;
 
-    // Timestamp when looting started
-    private float lootingStartTime;
+    // Timestamp when looting started for each loot
+    private Dictionary<LootGeneric, float> lootingStartTimes;
 
     void Start()
     {
         isAttacking = false;
-        currentLoot = null;
-        lootingStartTime = 0f;
+        currentLoots = new List<LootGeneric>();
+        lootingStartTimes = new Dictionary<LootGeneric, float>();
     }
 
     void FixedUpdate()
@@ -52,33 +53,33 @@ public class ChefAttack : MonoBehaviour
                 if (other.TryGetComponent<LootGeneric>(out var loot))
                 {
                     // Initialize the looting start time if the loot has changed
-                    if (currentLoot == null || currentLoot != loot)
+                    if (!currentLoots.Contains(loot))
                     {
-                        currentLoot = loot;
-                        lootingStartTime = Time.fixedTime;
+                        currentLoots.Add(loot);
+                        lootingStartTimes[loot] = Time.fixedTime;
                     }
 
                     // Check if the looting duration has been reached
-                    if (Time.fixedTime - lootingStartTime >= loot.Duration())
+                    if (Time.fixedTime - lootingStartTimes[loot] >= loot.duration)
                     {
-                        // Extract the loot
+                        // Reset the looting timer and remove the loot from current loots
+                        currentLoots.Remove(loot);
+                        lootingStartTimes.Remove(loot);
+
+                        // Add the loot name to the inventory and destroy it
                         if (TryGetComponent<ChefInventory>(out var inventory))
                         {
-                            inventory.Collect(loot);
-                            Destroy(other.gameObject);
+                            inventory.AddLoot(loot.name);
+                            Destroy(loot.gameObject);
                         }
-
-                        // Reset the looting timer and current loot
-                        currentLoot = null;
-                        lootingStartTime = 0f;
                     }
                 }
             }
             else
             {
-                // If not attacking, reset the looting timer and current loot
-                currentLoot = null;
-                lootingStartTime = 0f;
+                // If not attacking, reset the looting timers and current loots
+                currentLoots.Clear();
+                lootingStartTimes.Clear();
             }
         }
     }
@@ -87,11 +88,11 @@ public class ChefAttack : MonoBehaviour
     {
         if (other.CompareTag("loot"))
         {
-            if (other.TryGetComponent<LootGeneric>(out var loot) && currentLoot == loot)
+            if (other.TryGetComponent<LootGeneric>(out var loot) && currentLoots.Contains(loot))
             {
-                // Reset the looting timer and current loot when exiting the loot collider
-                currentLoot = null;
-                lootingStartTime = 0f;
+                // Reset the looting timer and remove the loot from current loots when exiting the loot collider
+                currentLoots.Remove(loot);
+                lootingStartTimes.Remove(loot);
             }
         }
     }
