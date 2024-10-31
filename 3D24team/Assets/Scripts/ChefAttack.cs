@@ -32,11 +32,6 @@ public class ChefAttack : MonoBehaviour
         GetComponent<Animator>().SetInteger("State", aniState);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        // No implementation needed for now
-    }
-
     // The duration of looting now correctly represents the actual time to loot the loot.
     // All identified bugs have been fixed.
     void OnTriggerStay2D(Collider2D other)
@@ -60,19 +55,18 @@ public class ChefAttack : MonoBehaviour
                     if (currentLoot == null || currentLoot != loot)
                     {
                         currentLoot = loot;
-                        lootingStartTime = Time.time; // Changed from Time.fixedTime to Time.time for accurate timing
+                        lootingStartTime = Time.fixedTime;
                     }
 
                     // Check if the looting duration has been reached
-                    if (Time.time - lootingStartTime >= loot.Duration())
+                    if (Time.fixedTime - lootingStartTime >= loot.Duration())
                     {
                         // Extract the loot
-                        // var inventory = GetComponent<ChefInventory>();
-                        // if (inventory != null)
-                        // {
-                        //     inventory.Collect(loot); // It calls destroy for the GameObject inside.
-                        // }
-                        Destroy(loot.gameObject);
+                        if (TryGetComponent<ChefInventory>(out var inventory))
+                        {
+                            inventory.Collect(loot);
+                            Destroy(other.gameObject);
+                        }
 
                         // Reset the looting timer and current loot
                         currentLoot = null;

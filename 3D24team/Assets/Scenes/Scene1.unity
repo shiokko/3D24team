@@ -177,7 +177,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3727588719291331139, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.13
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 3727588719291331139, guid: cfe1747f9eb3f489fab312faafcf3008, type: 3}
       propertyPath: m_LocalPosition.y
@@ -239,9 +239,10 @@ GameObject:
   - component: {fileID: 209137938}
   - component: {fileID: 209137939}
   - component: {fileID: 209137936}
+  - component: {fileID: 209137940}
   m_Layer: 3
   m_Name: Chef
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -417,7 +418,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &209137939
@@ -430,6 +431,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9492c3f5d2ba64522a9b04919971102f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &209137940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209137931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b5cc74eef3d84c17bacc0cf36665715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &274216217
