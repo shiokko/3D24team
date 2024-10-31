@@ -29,5 +29,9 @@ public class CattleGeneric : MonoBehaviour
 
         // Change the tag to "loot"
         gameObject.tag = "loot";
+
+        // Make rigidbody static
+        var rb = GetComponent<Rigidbody2D>();
+        rb.bodyType = RigidbodyType2D.Static;
     }
 }

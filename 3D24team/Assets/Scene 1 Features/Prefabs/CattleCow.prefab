@@ -243,8 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2
   wanderingDuration: 0.8
-  wanderProbability: 0.2
-  isKilled: 0
+  wanderProbability: 0.25
 --- !u!114 &1582876954043682924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a827563fa3f74cdf8201796ba8cc71f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isKilled: 0
 --- !u!114 &3906071922961411527
 MonoBehaviour:
   m_ObjectHideFlags: 0
