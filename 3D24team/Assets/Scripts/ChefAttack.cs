@@ -69,7 +69,7 @@ public class ChefAttack : MonoBehaviour
                         // Add the loot name to the inventory and destroy it
                         if (TryGetComponent<ChefInventory>(out var inventory))
                         {
-                            inventory.AddLoot(loot.name);
+                            inventory.AddLoot(loot.Name);
                             Destroy(loot.gameObject);
                         }
                     }

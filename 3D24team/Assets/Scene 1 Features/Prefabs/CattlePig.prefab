@@ -257,7 +257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isKilled: 0
-  lootName: pork
 --- !u!114 &3906071922961411527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,3 +270,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 2
+  Name: pork
