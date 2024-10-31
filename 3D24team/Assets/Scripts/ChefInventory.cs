@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections;
 
 public class ChefInventory : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class ChefInventory : MonoBehaviour
         loots = new List<string>();
     }
 
-    void Update() {
+    void Update()
+    {
         if (Input.GetKeyDown(KeyCode.E))
         {
             // Print the collected loots
@@ -27,7 +29,10 @@ public class ChefInventory : MonoBehaviour
                 str.Append(loot);
                 str.Append(", ");
             }
-            str.Remove(str.Length - 2, 2);
+            if (loots.Count > 0)
+            {
+                str.Remove(str.Length - 2, 2);
+            }
             str.Append("]");
             Debug.Log(str.ToString());
         }

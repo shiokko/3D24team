@@ -37,12 +37,14 @@ public class ChefAttack : MonoBehaviour
     // All identified bugs have been fixed.
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("cattle") && isAttacking)
+        if (isAttacking && other.CompareTag("cattle") && other.TryGetComponent<CattleGeneric>(out var cattle))
         {
-            if (other.TryGetComponent<CattleGeneric>(out var cattle))
-            {
-                cattle.Kill();
-            }
+            cattle.Kill();
+        }
+
+        if (isAttacking && other.CompareTag("bus") && other.TryGetComponent<Bus>(out var bus))
+        {
+            bus.TakeToScene("Scene2");
         }
 
         if (other.CompareTag("loot"))

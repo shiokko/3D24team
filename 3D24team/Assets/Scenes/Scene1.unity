@@ -645,9 +645,10 @@ GameObject:
   - component: {fileID: 274216219}
   - component: {fileID: 274216218}
   - component: {fileID: 274216220}
+  - component: {fileID: 274216221}
   m_Layer: 0
   m_Name: Bus
-  m_TagString: Untagged
+  m_TagString: bus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -781,16 +782,28 @@ PolygonCollider2D:
       - {x: -0.105, y: 0.01}
       - {x: -0.195, y: -0.07}
       - {x: -0.635, y: -0.07}
-      - {x: -1.346734, y: -0.067197025}
-      - {x: -1.355, y: -1.13}
-      - {x: -1.3149999, y: -1.15}
+      - {x: -1.3384194, y: -0.079797745}
+      - {x: -1.3739009, y: -0.90318704}
+      - {x: -1.3276008, y: -1.1310989}
       - {x: -1.1234503, y: -1.1396621}
       - {x: -1.045, y: -1.25}
       - {x: -0.775, y: -1.25}
       - {x: -0.7156647, y: -1.1404041}
       - {x: -0.114999995, y: -1.15}
       - {x: -0.015, y: -1.25}
-  m_UseDelaunayMesh: 1
+  m_UseDelaunayMesh: 0
+--- !u!114 &274216221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274216217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35c6e97068e7b4a4a90a6189ae2fbc2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &439169896
 PrefabInstance:
   m_ObjectHideFlags: 0
