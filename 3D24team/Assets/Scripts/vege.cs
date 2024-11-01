@@ -7,12 +7,14 @@ public class raw_vege : MonoBehaviour
     public GameObject cutVersion;
     private bool isDragging = false;
     public bool isInBasket = true;
+    public bool isWashed = false;
     private Vector3 offset;
     private Vector3 originalPosition;
 
-    public void MoveOutOfBasket()
+    void Start()
     {
-        isInBasket = false;
+        isInBasket = true;
+        isWashed = false;
     }
 
     void OnMouseDown()
@@ -40,5 +42,13 @@ public class raw_vege : MonoBehaviour
         Vector3 mouseScreenPosition = Input.mousePosition;
         mouseScreenPosition.z = Camera.main.nearClipPlane;
         return Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("water"))
+        {
+            isWashed = true;
+        }
     }
 }

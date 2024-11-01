@@ -11,7 +11,7 @@ public class basket : MonoBehaviour
         if (other.CompareTag("vege"))
         {
             var vegeScript = other.GetComponent<raw_vege>();
-            vegeScript.MoveOutOfBasket();
+            vegeScript.isInBasket = false;
             Instantiate(prefab_raw, transform.position, Quaternion.identity);
         }
     }
