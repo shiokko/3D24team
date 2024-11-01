@@ -2,15 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class knife : MonoBehaviour
+public class rawMeat : MonoBehaviour
 {
+    public GameObject friedVersion;
+    public GameObject prefab_raw;
     private bool isDragging = false;
+    private bool isInBowl = true;
     private Vector3 offset;
     private Vector3 originalPosition;
 
     void OnMouseDown()
     {
         isDragging = true;
+        if (isInBowl)
+        {
+            Instantiate(prefab_raw, transform.position, Quaternion.identity);
+            isInBowl = false;
+        }
         offset = transform.position - GetMouseWorldPosition();
         originalPosition = transform.position;
     }
@@ -20,36 +28,12 @@ public class knife : MonoBehaviour
         if (isDragging)
         {
             transform.position = GetMouseWorldPosition() + offset;
-            CheckForIngredient();
         }
     }
 
     void OnMouseUp()
     {
         isDragging = false;
-    }
-
-    private void CheckForIngredient()
-    {
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, 0.5f);
-        foreach (var hitCollider in hitColliders)
-        {
-            if (hitCollider.CompareTag("vege"))
-            {
-                ReplaceIngredient(hitCollider);
-                break;
-            }
-        }
-    }
-
-    private void ReplaceIngredient(Collider2D vege)
-    {
-        var vegeScript = vege.GetComponent<raw_vege>();
-        if (vegeScript != null && !vegeScript.isInBasket && vegeScript.isWashed)
-        {
-            GameObject cutvege = Instantiate(vegeScript.cutVersion, vege.transform.position, Quaternion.identity);
-            Destroy(vege.gameObject);
-        }
     }
 
     private Vector3 GetMouseWorldPosition()

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5793139200488616470}
   - component: {fileID: 5116433383523096897}
   - component: {fileID: 2282364655608366190}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cucumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4635022616726732898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6012badb9200f4a49af4aba198f8408e, type: 3}
+  m_Script: {fileID: 11500000, guid: ae649195619514298b790069654b4daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab_cucumber: {fileID: 0}
+  cutVersion: {fileID: 5050365252963964696, guid: eeedfcdb97dea47a1bdd7be01c9f585f, type: 3}
+  isInBasket: 1
+  isWashed: 0
+  isCut: 0
