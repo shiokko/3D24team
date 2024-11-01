@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene2.unity
     guid: 01488b79f309bff45afe6a891ed4cbb8
+  - enabled: 1
+    path: Assets/Scenes/SunFall.unity
+    guid: f333a59b1033f4b25a0cc813438aee69
   m_configObjects: {}
