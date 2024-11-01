@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class Bus : MonoBehaviour
 {
@@ -10,14 +11,38 @@ public class Bus : MonoBehaviour
         isAboard = false;
     }
 
-    // Take the bus to the specified scene
-    public void TakeToScene(string sceneName)
+    // Take the bus to Scene2 after SunFall scene is loaded
+    public void TakeToScene2()
     {
         if (!isAboard)
         {
-            Debug.Log("Taking the bus to " + sceneName);
             isAboard = true;
-            SceneManager.LoadSceneAsync(sceneName).completed += (AsyncOperation op) => { isAboard = false; Debug.Log("Arrived at " + sceneName); };
+            LoadScene2Async();
         }
+    }
+
+    private async void LoadScene2Async()
+    {
+        // Load the SunFall scene asynchronously and wait until it's loaded
+        AsyncOperation loadSunFall = SceneManager.LoadSceneAsync("SunFall");
+        Debug.Log("Loading SunFall scene");
+        while (!loadSunFall.isDone)
+        {
+            await Task.Yield();
+        }
+
+        // Wait for 2 seconds before loading Scene2
+        await Task.Delay(2000);
+
+        // Load Scene2 asynchronously and wait until it's loaded
+        AsyncOperation loadScene2 = SceneManager.LoadSceneAsync("Scene2");
+        Debug.Log("Loading Scene2");
+        while (!loadScene2.isDone)
+        {
+            await Task.Yield();
+        }
+
+        isAboard = false;
+        Debug.Log("Arrived at Scene2");
     }
 }

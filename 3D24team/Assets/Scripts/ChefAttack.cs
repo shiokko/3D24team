@@ -44,7 +44,7 @@ public class ChefAttack : MonoBehaviour
 
         if (isAttacking && other.CompareTag("bus") && other.TryGetComponent<Bus>(out var bus))
         {
-            bus.TakeToScene("Scene2");
+            bus.TakeToScene2();
         }
 
         if (other.CompareTag("loot"))
