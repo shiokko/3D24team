@@ -17,7 +17,7 @@ public class Bus : MonoBehaviour
         {
             Debug.Log("Taking the bus to " + sceneName);
             isAboard = true;
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+            SceneManager.LoadSceneAsync(sceneName).completed += (AsyncOperation op) => { isAboard = false; Debug.Log("Arrived at " + sceneName); };
         }
     }
 }
