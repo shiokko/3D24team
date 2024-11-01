@@ -25,7 +25,7 @@ public class Bus : MonoBehaviour
     {
         // Load the SunFall scene asynchronously and wait until it's loaded
         AsyncOperation loadSunFall = SceneManager.LoadSceneAsync("SunFall");
-        Debug.Log("Loading SunFall scene");
+        Debug.Log("Loading SunFall and Scene2");
         while (!loadSunFall.isDone)
         {
             await Task.Yield();
@@ -36,7 +36,6 @@ public class Bus : MonoBehaviour
 
         // Load Scene2 asynchronously and wait until it's loaded
         AsyncOperation loadScene2 = SceneManager.LoadSceneAsync("Scene2");
-        Debug.Log("Loading Scene2");
         while (!loadScene2.isDone)
         {
             await Task.Yield();
