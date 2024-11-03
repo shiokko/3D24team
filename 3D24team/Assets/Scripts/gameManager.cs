@@ -17,54 +17,54 @@ public class gameManager : MonoBehaviour
         moneyText.text = "$ " + money;
     }
 
-    void Start()
-    {
-        InitializeMenu();
-        UpdateMoneyText();
-        StartRound();
-    }
+    // void Start()
+    // {
+    //     InitializeMenu();
+    //     UpdateMoneyText();
+    //     StartRound();
+    // }
 
-    void InitializeMenu()
-    {
-        menuItems.Add("BeefBurger");
-        menuItems.Add("PorkBurger");
-        menuItems.Add("Salad");
-    }
+    // void InitializeMenu()
+    // {
+    //     menuItems.Add("BeefBurger");
+    //     menuItems.Add("PorkBurger");
+    //     menuItems.Add("Salad");
+    // }
 
-    void StartRound()
-    {
-        StartCoroutine(SpawnCustomers());
-    }
+    // void StartRound()
+    // {
+    //     StartCoroutine(SpawnCustomers());
+    // }
 
-    IEnumerator SpawnCustomers()
-    {
-        int customersToSpawn = Mathf.Min(totalCustomers, 2);
-        for (int i = 0; i < customersToSpawn; i++)
-        {
-            GameObject customer = Instantiate(customerPrefab, spawnPoint.position, Quaternion.identity);
-            customer.GetComponent<customer>().orderedItem = menuItems[Random.Range(0, menuItems.Count)];
-            yield return new WaitForSeconds(2f);
-        }
-        totalCustomers -= customersToSpawn;
-        if (totalCustomers > 0)
-        {
-            EndRound();
-        }
-        else
-        {
-            EndGame();
-        }
-    }
+    // IEnumerator SpawnCustomers()
+    // {
+    //     // int customersToSpawn = Mathf.Min(totalCustomers, 2);
+    //     for (int i = 0; i < totalCustomers; i--)
+    //     {
+    //         GameObject customer = Instantiate(customerPrefab, spawnPoint.position, Quaternion.identity);
+    //         customer.GetComponent<customer>().orderedItem = menuItems[Random.Range(0, menuItems.Count)];
+    //         yield return new WaitForSeconds(2f);
+    //     }
+    //     totalCustomers -= customersToSpawn;
+    //     if (totalCustomers > 0)
+    //     {
+    //         EndRound();
+    //     }
+    //     else
+    //     {
+    //         EndGame();
+    //     }
+    // }
 
-    void EndRound()
-    {
-        StartRound();
-    }
+    // void EndRound()
+    // {
+    //     StartRound();
+    // }
 
-    void EndGame()
-    {
-        moneyText.text = "Earn $ " + money + "today!";
-    }
+    // void EndGame()
+    // {
+    //     moneyText.text = "Earn $ " + money + "today!";
+    // }
 
     public void UpdateMoney(string orderedItem)
     {

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1987733072772628624}
   - component: {fileID: 8838340556904384692}
   - component: {fileID: 527983321096206962}
+  - component: {fileID: -3115815685049528216}
   m_Layer: 0
   m_Name: customer1
   m_TagString: Untagged
@@ -114,7 +115,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.03234005, y: 2.18297}
@@ -130,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.253624, y: 3.63406}
   m_EdgeRadius: 0
+--- !u!114 &-3115815685049528216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7522572828095737375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efef4cbba014e481e9f8ff145f955250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderedItem: 
