@@ -3,12 +3,31 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - salad
+  - water
+  - rawBeef
+  - rawPork
+  - friedBeef
+  - friedPork
+  - rawEgg
+  - friedEgg
+  - BeefBurger
+  - PorkBurger
+  - bread
+  - mayo
+  - lettuce
+  - cut_lettuce
+  - tomato
+  - cut_tomato
+  - cucumber
+  - cut_cucumber
+  - vege
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - food
   - Water
   - UI
   - 
