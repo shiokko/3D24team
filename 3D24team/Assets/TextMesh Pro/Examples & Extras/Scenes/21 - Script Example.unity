@@ -109,6 +109,11 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+<<<<<<<< HEAD:3D24team/Assets/TextMesh Pro/Examples & Extras/Scenes/21 - Script Example.unity
+========
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
+>>>>>>>> 8ec0e6d (re-upload the files):3D24team/Assets/Scenes/SampleScene.unity
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -150,9 +155,16 @@ Camera:
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_projectionMatrixMode: 1
+<<<<<<<< HEAD:3D24team/Assets/TextMesh Pro/Examples & Extras/Scenes/21 - Script Example.unity
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_GateFitMode: 2
+========
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+>>>>>>>> 8ec0e6d (re-upload the files):3D24team/Assets/Scenes/SampleScene.unity
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -186,7 +198,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:3D24team/Assets/TextMesh Pro/Examples & Extras/Scenes/21 - Script Example.unity
   m_GameObject: {fileID: 1079079952}
+========
+  m_GameObject: {fileID: 519420028}
+>>>>>>>> 8ec0e6d (re-upload the files):3D24team/Assets/Scenes/SampleScene.unity
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -28.517307}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -194,6 +210,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<<< HEAD:3D24team/Assets/TextMesh Pro/Examples & Extras/Scenes/21 - Script Example.unity
 --- !u!1 &1888731522
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,3 +254,5 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+========
+>>>>>>>> 8ec0e6d (re-upload the files):3D24team/Assets/Scenes/SampleScene.unity
