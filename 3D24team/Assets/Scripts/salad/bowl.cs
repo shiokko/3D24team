@@ -7,6 +7,7 @@ public class bowl : MonoBehaviour
     public int vegetableCount = 0;
     public bool isDone = false;
     private bool isDragging = false;
+    private bool createBowl = false;
     private Vector3 offset;
     private Vector3 originalPosition;
     public GameObject prefab_raw;
@@ -18,6 +19,7 @@ public class bowl : MonoBehaviour
         bowlTop = bowlTopObject.GetComponent<bowlTop>();
         vegetableCount = 0;
         isDone = false;
+        createBowl = false;
         bowlTop.ResetSprite();
     }
     
@@ -28,7 +30,11 @@ public class bowl : MonoBehaviour
             isDragging = true;
             offset = transform.position - GetMouseWorldPosition();
             originalPosition = transform.position;
-            Instantiate(prefab_raw, transform.position, Quaternion.identity);
+            if (!createBowl)
+            {
+                Instantiate(prefab_raw, transform.position, Quaternion.identity);
+                createBowl = true;
+            }
         }
     }
 

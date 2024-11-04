@@ -7,6 +7,7 @@ public class Plate : MonoBehaviour
     public int ingredientCount = 0;
     public bool isDone = false;
     private bool isDragging = false;
+    private bool createPlate = false;
     private Vector3 offset;
     private Vector3 originalPosition;
     public GameObject prefab_raw;
@@ -18,6 +19,7 @@ public class Plate : MonoBehaviour
         plateTop = plateTopObject.GetComponent<plateTop>();
         ingredientCount = 0;
         isDone = false;
+        createPlate = false;
         plateTop.ResetSprite();
     }
     
@@ -26,9 +28,13 @@ public class Plate : MonoBehaviour
         if (isDone)
         {
             isDragging = true;
-            Instantiate(prefab_raw, transform.position, Quaternion.identity);
             offset = transform.position - GetMouseWorldPosition();
             originalPosition = transform.position;
+            if (!createPlate)
+            {
+                Instantiate(prefab_raw, transform.position, Quaternion.identity);
+                createPlate = true;
+            }
         }
     }
 
