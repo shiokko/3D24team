@@ -9,7 +9,8 @@ public class gameManager : MonoBehaviour
     public float timer = 180f;
     private float timeLeft;
     public TextMeshProUGUI timerText;
-    public GameObject gameOverText;
+    public TextMeshProUGUI gameOverText;
+    public Image gameOverImage;
 
     public GameObject customerPrefab;
     private List<string> menuItems = new List<string>();
@@ -24,10 +25,11 @@ public class gameManager : MonoBehaviour
         // Debug.Log("Start() called.");
         timeLeft = timer;
         timerText.text = "Time Left: " + Mathf.Round(timeLeft) + "s";
-        gameOverText.SetActive(false);
+        gameOverText.gameObject.SetActive(false);
+        gameOverImage.gameObject.SetActive(false);
         menuItems = new List<string> { "BeefBurger", "PorkBurger", "salad"};
         StartCoroutine(SpawnCustomers());
-        // UpdateMoneyText();
+        UpdateMoneyText();
     }
 
     void Update()
@@ -38,7 +40,9 @@ public class gameManager : MonoBehaviour
         if (timeLeft <= 0)
         {
             timerText.text = "Time Left: " + Mathf.Round(timeLeft);
-            gameOverText.SetActive(true);
+            gameOverImage.gameObject.SetActive(true);
+            gameOverText.gameObject.SetActive(true);
+            gameOverText.text = "The day is over!\n You earned $" + money + " a day!";
             Time.timeScale = 0;
         }
     }
@@ -130,17 +134,17 @@ public class gameManager : MonoBehaviour
     {
         int earnings = 0;
 
-        if (orderedItem == "Beef Burger")
+        if (orderedItem == "BeefBurger")
         {
-            earnings += 70;
+            earnings = 70;
         }
-        else if (orderedItem == "Pork Burger")
+        else if (orderedItem == "PorkBurger")
         {
-            earnings += 70;
+            earnings = 70;
         }
         else if (orderedItem == "salad")
         {
-            earnings += 40; 
+            earnings = 40; 
         }
         money += earnings;
         UpdateMoneyText();
