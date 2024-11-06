@@ -24,7 +24,7 @@ public class ChefAttack : MonoBehaviour
         int aniState = GetComponent<Animator>().GetInteger("State");
 
         // Press K to attack with the chef
-        isAttacking = Input.GetKey(KeyCode.K);
+        isAttacking = Input.GetKey(KeyCode.F);
 
         // Specify the attack animation based on the attack state
         aniState = isAttacking ? 2 : (aniState == 2 ? 1 : aniState);
