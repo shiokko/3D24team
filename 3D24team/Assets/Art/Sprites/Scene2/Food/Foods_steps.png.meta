@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6b2b4f9e06165aa4eb3f478e21b7ccfd
+guid: f219c3fbf65f54be3a4f1b3d5b681e30
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 20
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: salad_1
+      name: Foods_steps_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: baa30aac768d841438c2d7612347bbe4
-      internalID: 917725341
+      spriteID: 392c8dc3f601241b6a337063710361f6
+      internalID: 991443345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: salad_2
+      name: Foods_steps_1
       rect:
         serializedVersion: 2
         x: 50
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5bc749220ad4cc469c4a95a970b5e63
-      internalID: 1193840771
+      spriteID: 5c3246294b04c44ba9ad5734aef44702
+      internalID: 518289093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: salad_3
+      name: Foods_steps_2
       rect:
         serializedVersion: 2
         x: 100
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a413bb34fdcdd2f42bf81fc77326bc45
-      internalID: -448056712
+      spriteID: d917b3e4821ab4f359d62630eaac21ba
+      internalID: 1318231494
       vertices: []
       indices: 
       edges: []
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ec99e599f65ea944893b1824e77786f
-      internalID: -438548164
+      spriteID: d73d39065a5194cf59b1358c4ebb7f58
+      internalID: 1728037217
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: burger_1
+      name: Foods_steps_4
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24da532d93d10ff41a37a5e5aaca3320
-      internalID: 537814596
+      spriteID: 5a110eec8ac6b44f3b12afcf311894ce
+      internalID: -1557983523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: burger_2
+      name: Foods_steps_5
       rect:
         serializedVersion: 2
         x: 50
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5d516aecbad81f4696f41a77125c8ce
-      internalID: -1569271414
+      spriteID: 7cb9ebab53dde4662a32bff256370754
+      internalID: 1192632449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pork_burger_3
+      name: Foods_steps_6
       rect:
         serializedVersion: 2
         x: 100
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb6ce3bf199ad89449ab99be2b34d1aa
-      internalID: -2020740508
+      spriteID: 889d7c445fd6d4d4ea17dd8103390be2
+      internalID: -569492773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pork_burger_4
+      name: Foods_steps_7
       rect:
         serializedVersion: 2
         x: 150
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fa20d3e33b61a74abc96eb59b53e730
-      internalID: -877669137
+      spriteID: c3ef86e02e22b4bc5838ee12354b4d4a
+      internalID: 1808771236
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pork_burger_5
+      name: Foods_steps_8
       rect:
         serializedVersion: 2
         x: 200
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 095f293b3c2ff6e4b95c5f5f7cab6b13
-      internalID: 225093051
+      spriteID: d5097384756954db1be99370f3ec37e8
+      internalID: 1781085252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pork_burger_6
+      name: Foods_steps_9
       rect:
         serializedVersion: 2
         x: 250
@@ -313,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf827214fc13af64494901e613900f82
-      internalID: 417668902
+      spriteID: b131bbe3bb43c4254ba2bcacff6ae0b9
+      internalID: 165842911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pork_burger
+      name: pork_ham
       rect:
         serializedVersion: 2
         x: 300
@@ -334,14 +334,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 000a1cb61f3d0454fa9b4578072328af
-      internalID: -1357037926
+      spriteID: c962237de58264eac9a59efe193b508f
+      internalID: -1033610737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beef_burger_3
+      name: Foods_steps_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 150
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4f8ddd8326346b397eaa5d40c07815
+      internalID: -749062748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foods_steps_12
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 150
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b039c64868a884e2294f13e5a72ef49c
+      internalID: 2008603201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Foods_steps_13
       rect:
         serializedVersion: 2
         x: 100
@@ -355,14 +397,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4f974cdaebd558429932157592a4663
-      internalID: -423149886
+      spriteID: 66fa72ba618e94597ad1b86d8da7bde7
+      internalID: 110655531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beef_burger_4
+      name: Foods_steps_14
       rect:
         serializedVersion: 2
         x: 150
@@ -376,14 +418,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f89feb45dfa9f7a4ab11e4d88f6d218e
-      internalID: -1018154988
+      spriteID: 7d72bf66f6adc42f9b4fd0caf5aac050
+      internalID: -874928906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beef_burger_5
+      name: Foods_steps_15
       rect:
         serializedVersion: 2
         x: 200
@@ -397,14 +439,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f6730294c9cae046aeb1c5c7a6a23ff
-      internalID: -1831978903
+      spriteID: a224ab018a1ee46a591316348905cce6
+      internalID: -63037517
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beef_burger_6
+      name: Foods_steps_16
       rect:
         serializedVersion: 2
         x: 250
@@ -418,14 +460,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffcd1586f6a6e9448b82cf889468a189
-      internalID: -1038212467
+      spriteID: 0b4c5482b3c4f470ebc1083618ad455f
+      internalID: -1637134404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: beef_burger
+      name: beef_ham
       rect:
         serializedVersion: 2
         x: 300
@@ -439,14 +481,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e5f6e3d5ca107542a846b9f4c087e15
-      internalID: -894089909
+      spriteID: 993686bbd489047799972f0e78631f6d
+      internalID: 833848378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p_noodle_1
+      name: Foods_steps_18
       rect:
         serializedVersion: 2
         x: 0
@@ -460,14 +502,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27230068e7ea0eb459accfa27bfdb97d
-      internalID: -752521014
+      spriteID: cc4abbf9af75e49cb8055774d59ce43c
+      internalID: -2130479492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p_noodle_2
+      name: Foods_steps_19
       rect:
         serializedVersion: 2
         x: 50
@@ -481,14 +523,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90002f5847fba234a9df306ff2fbd768
-      internalID: -1087802876
+      spriteID: d8d3a0d12c5074dc4b4bcec80dff379c
+      internalID: -1280653361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p_noodle_3
+      name: Foods_steps_20
       rect:
         serializedVersion: 2
         x: 100
@@ -502,14 +544,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: effe006ae2b190b4590edc76a6331a4c
-      internalID: -659512973
+      spriteID: 1d30243a35ac64ac4ade819e6a15ab51
+      internalID: 1449817740
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: p_noodle
+      name: pork_noodle
       rect:
         serializedVersion: 2
         x: 150
@@ -523,14 +565,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f7ee6162cb8f3b458650e9aca871540
-      internalID: -1330757806
+      spriteID: 796d2d0c7d4eb4e49a7c9ea75a0a8d25
+      internalID: -1274282748
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: b_noodle_1
+      name: Foods_steps_22
       rect:
         serializedVersion: 2
         x: 0
@@ -544,14 +586,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 387417a09a591e043bf3aba1c4a8d9a5
-      internalID: -1182015475
+      spriteID: 4c3d87a694c6747bf96a220f8689fc3a
+      internalID: -2571098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: b_noodle_2
+      name: Foods_steps_23
       rect:
         serializedVersion: 2
         x: 50
@@ -565,14 +607,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3496ffbe038b38a409b0305720e61f58
-      internalID: 936143165
+      spriteID: 258a50db34bcb4e66be76d0918c87658
+      internalID: 1085904134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: b_noodle_3
+      name: Foods_steps_24
       rect:
         serializedVersion: 2
         x: 100
@@ -586,14 +628,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0ebe151f29a1924da4c1f59482bc69b
-      internalID: -467871315
+      spriteID: 961c14a95dfe84529974c069544c3ee7
+      internalID: 2111360000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: b_noodle
+      name: beef_noodle
       rect:
         serializedVersion: 2
         x: 150
@@ -607,14 +649,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8de08f9a6ea23843a92c47eff60c62d
-      internalID: -785845311
+      spriteID: 44c36c2beb6c649f3aacc33c4dd2c0f9
+      internalID: 440173369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: l_noodle_1
+      name: Foods_steps_26
       rect:
         serializedVersion: 2
         x: 0
@@ -628,14 +670,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e6e7c175e0b2844aa6493690ee9ab58
-      internalID: -1108167231
+      spriteID: a6ac8fe98681b48728919677bfacaa03
+      internalID: 1650276091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: l_noodle_2
+      name: Foods_steps_27
       rect:
         serializedVersion: 2
         x: 50
@@ -649,14 +691,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3a6cdab4249dfe419ebeedc3b5df477
-      internalID: 1375918785
+      spriteID: b407993c011b24927896d1e8b27220ae
+      internalID: 1558583023
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: l_noodle_3
+      name: Foods_steps_28
       rect:
         serializedVersion: 2
         x: 100
@@ -670,14 +712,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4563042f152d6424193cf71647fda8d6
-      internalID: 214100596
+      spriteID: 51fd4ed72f7b34b6cb399c1c50d4ca22
+      internalID: -1966723974
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: l_noodle
+      name: lettuce_noodle
       rect:
         serializedVersion: 2
         x: 150
@@ -691,8 +733,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eeea255cf624a2c4d83dca31c88297f2
-      internalID: 1983875460
+      spriteID: a911230306db94c0c9a974d5f223d9b4
+      internalID: -1875156303
       vertices: []
       indices: 
       edges: []
@@ -708,36 +750,36 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      b_noodle: -785845311
-      b_noodle_1: -1182015475
-      b_noodle_2: 936143165
-      b_noodle_3: -467871315
-      beef_burger: -894089909
-      beef_burger_2: -1641839290
-      beef_burger_3: -423149886
-      beef_burger_4: -1018154988
-      beef_burger_5: -1831978903
-      beef_burger_6: -1038212467
-      burger_: 2013890881
-      burger_1: 537814596
-      burger_2: -1569271414
-      l_noodle: 1983875460
-      l_noodle_1: -1108167231
-      l_noodle_2: 1375918785
-      l_noodle_3: 214100596
-      p_noodle: -1330757806
-      p_noodle_1: -752521014
-      p_noodle_2: -1087802876
-      p_noodle_3: -659512973
-      pork_burger: -1357037926
-      pork_burger_3: -2020740508
-      pork_burger_4: -877669137
-      pork_burger_5: 225093051
-      pork_burger_6: 417668902
-      salad: -438548164
-      salad_1: 917725341
-      salad_2: 1193840771
-      salad_3: -448056712
+      Foods_steps_0: 991443345
+      Foods_steps_1: 518289093
+      Foods_steps_11: -749062748
+      Foods_steps_12: 2008603201
+      Foods_steps_13: 110655531
+      Foods_steps_14: -874928906
+      Foods_steps_15: -63037517
+      Foods_steps_16: -1637134404
+      Foods_steps_18: -2130479492
+      Foods_steps_19: -1280653361
+      Foods_steps_2: 1318231494
+      Foods_steps_20: 1449817740
+      Foods_steps_22: -2571098
+      Foods_steps_23: 1085904134
+      Foods_steps_24: 2111360000
+      Foods_steps_26: 1650276091
+      Foods_steps_27: 1558583023
+      Foods_steps_28: -1966723974
+      Foods_steps_4: -1557983523
+      Foods_steps_5: 1192632449
+      Foods_steps_6: -569492773
+      Foods_steps_7: 1808771236
+      Foods_steps_8: 1781085252
+      Foods_steps_9: 165842911
+      beef_ham: 833848378
+      beef_noodle: 440173369
+      lettuce_noodle: -1875156303
+      pork_ham: -1033610737
+      pork_noodle: -1274282748
+      salad: 1728037217
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

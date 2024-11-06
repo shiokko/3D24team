@@ -4,6 +4,24 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - salad
+  - water
+  - rawBeef
+  - rawPork
+  - friedBeef
+  - friedPork
+  - rawEgg
+  - friedEgg
+  - BeefBurger
+  - PorkBurger
+  - bread
+  - mayo
+  - lettuce
+  - cut_lettuce
+  - tomato
+  - cut_tomato
+  - cucumber
+  - cut_cucumber
   - vege
   - cattle
   - bus
@@ -14,6 +32,7 @@ TagManager:
   - TransparentFX
   - Ignore Raycast
   - Character
+  - food
   - Water
   - UI
   - TransparentBuild
