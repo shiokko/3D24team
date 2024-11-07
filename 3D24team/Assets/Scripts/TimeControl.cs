@@ -34,11 +34,8 @@ public class TimeControl : MonoBehaviour
             var clockText = GetComponent<ClockText>();
 
             // TODO: Smell code
-            var panel = GameObject.Find("InventoryPanel");
-            if (panel != null)
-            {
-                panel.SetActive(false);
-            }
+            var inventory = GameObject.Find("Inventory").transform.Find("InventoryPanel").gameObject;
+            inventory.SetActive(false);
 
             if (sceneName == "Scene1")
             {

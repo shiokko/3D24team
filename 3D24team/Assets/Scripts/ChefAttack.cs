@@ -45,10 +45,10 @@ public class ChefAttack : MonoBehaviour
         // TODO: Smell code
         if (isAttacking && other.CompareTag("store"))
         {
-            var inventory = GameObject.Find("InventoryPanel");
-            var store = GameObject.Find("StorePanel");
+            var inventory = GameObject.Find("Inventory").transform.Find("InventoryPanel").gameObject;
             inventory.SetActive(false);
-            store.SetActive(!store.activeSelf);
+            var store = GameObject.Find("Store").transform.Find("StorePanel").gameObject;
+            store.SetActive(true);
         }
 
         if (other.CompareTag("loot"))
@@ -100,6 +100,11 @@ public class ChefAttack : MonoBehaviour
                 currentLoots.Remove(loot);
                 lootingStartTimes.Remove(loot);
             }
+        }
+
+        if (other.CompareTag("store")) {
+            var store = GameObject.Find("Store").transform.Find("StorePanel").gameObject;
+            store.SetActive(false);
         }
     }
 }

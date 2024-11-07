@@ -12,26 +12,13 @@ public class Inventory : MonoBehaviour
 
     private static int nextId = 0;
 
-    private void Start()
-    {
-        UpdatePanel();
-        var panel = transform.Find("InventoryPanel");
-        if (panel != null)
-        {
-            panel.gameObject.SetActive(false);
-        }
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             // Toggle visibility of the intermediate object
             var panel = transform.Find("InventoryPanel");
-            if (panel != null)
-            {
-                panel.gameObject.SetActive(!panel.gameObject.activeSelf);
-            }
+            panel.gameObject.SetActive(!panel.gameObject.activeSelf);
 
 #if UNITY_EDITOR
             // Print the collected items
@@ -98,13 +85,9 @@ public class Inventory : MonoBehaviour
         UpdatePanel();
     }
 
-    private void UpdatePanel()
+    void UpdatePanel()
     {
         var panel = transform.Find("InventoryPanel");
-        if (panel == null)
-        {
-            return;
-        }
 
         InventorySlot[] slots = panel.GetComponentsInChildren<InventorySlot>();
         foreach (var slot in slots)
