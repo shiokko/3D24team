@@ -7,6 +7,11 @@ public class mayo : MonoBehaviour
     private bool isDragging = false;
     private Vector3 offset;
     private Vector3 originalPosition;
+
+    void Start()
+    {
+        gameObject.SetActive(GameObject.Find("Inventory").GetComponent<Inventory>().HasItem(tag));
+    }
     
     void OnMouseDown()
     {

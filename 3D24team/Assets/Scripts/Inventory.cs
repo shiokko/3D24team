@@ -46,6 +46,11 @@ public class Inventory : MonoBehaviour
         Debug.Log($"Added {itemName} to inventory.");
     }
 
+    public bool HasItem(string itemName)
+    {
+        return items.Any(item => item.Name == itemName && !item.IsExpired());
+    }
+
     public bool PopOldestItem(string itemName)
     {
         Item oldestItem = null;
@@ -60,12 +65,13 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        if (oldestItem != null && !oldestItem.IsExpired())
+        if (oldestItem != null)
         {
+            var isItemUsable = !oldestItem.IsExpired();
             items.Remove(oldestItem);
             UpdatePanel();
             Debug.Log($"Popped {itemName} from inventory.");
-            return true;
+            return isItemUsable;
         }
         return false;
     }
