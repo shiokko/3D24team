@@ -9,10 +9,7 @@ public class ClockText : MonoBehaviour
 
     private float fromTime;
 
-    public float Duration
-    {
-        get => Math.Max((Time.fixedTime - fromTime) * timeScale + offset, 0f);
-    }
+    public float Duration => Math.Max((Time.fixedTime - fromTime) * timeScale + offset, 0f);
 
     void Start()
     {

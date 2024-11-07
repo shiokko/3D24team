@@ -33,6 +33,8 @@ public class TimeControl : MonoBehaviour
             var SceneRouter = GetComponent<SceneRouter>();
             var clockText = GetComponent<ClockText>();
 
+            GameObject.Find("InventoryPanel").SetActive(false);
+
             if (sceneName == "Scene1")
             {
                 await SceneRouter.GoToScene2();

@@ -32,11 +32,10 @@ TagManager:
   - TransparentFX
   - Ignore Raycast
   - Character
-  - food
   - Water
   - UI
+  - UI
   - TransparentBuild
-  - 
   - 
   - 
   - 

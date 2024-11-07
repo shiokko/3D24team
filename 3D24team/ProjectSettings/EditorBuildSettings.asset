@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SunRise.unity
     guid: 76bdd9519f0e74eefa91889ab8e6903b
+  - enabled: 1
+    path: Assets/Scenes/UI.unity
+    guid: 761dbe984873f4193b86363eafd50372
   m_configObjects: {}
