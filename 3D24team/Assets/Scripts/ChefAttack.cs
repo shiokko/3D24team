@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 public class ChefAttack : MonoBehaviour
 {
+    public GameObject cattleCowPrefab;
+    public GameObject cattlePigPrefab;
+
     private bool isAttacking;
 
     // Current loots being attacked
@@ -40,6 +43,7 @@ public class ChefAttack : MonoBehaviour
         if (isAttacking && other.CompareTag("cattle") && other.TryGetComponent<CattleGeneric>(out var cattle))
         {
             cattle.Kill();
+            RespawnCattle();
         }
 
         // TODO: Smell code
@@ -102,9 +106,24 @@ public class ChefAttack : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("store")) {
+        if (other.CompareTag("store"))
+        {
             var store = GameObject.Find("Store").transform.Find("StorePanel").gameObject;
             store.SetActive(false);
+        }
+    }
+
+    void RespawnCattle()
+    {
+        float p = Mathf.Sqrt(-Mathf.Log(Random.value)) * Mathf.Cos(Mathf.PI * Random.value);
+        var newTransform = GameObject.Find("CattleSpawner").transform;
+        if (p > 0.583f)
+        {
+            Instantiate(cattleCowPrefab, newTransform.position, newTransform.rotation);
+        }
+        else if (p < -0.583f)
+        {
+            Instantiate(cattlePigPrefab, newTransform.position, newTransform.rotation);
         }
     }
 }
