@@ -82,6 +82,7 @@ public class Inventory : MonoBehaviour
         {
             item.Lives -= 1;
         }
+        ClearExpiredItems();
         UpdatePanel();
     }
 

@@ -1,4 +1,5 @@
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,10 +10,12 @@ public class TimeControl : MonoBehaviour
     public string sceneName;
 
     private bool isSwitchingScene;
+    private int elapsedDays;
 
     void Start()
     {
         isSwitchingScene = false;
+        elapsedDays = 0;
     }
 
     void FixedUpdate()
@@ -48,9 +51,18 @@ public class TimeControl : MonoBehaviour
                 await SceneRouter.GoToScene1();
                 sceneName = "Scene1";
                 clockText.Restart(scene1Duration);
+                PastOneDay();
             }
 
             isSwitchingScene = false;
         }
+    }
+
+    void PastOneDay() {
+        elapsedDays++;
+        Debug.Log($"Elapsed days: {elapsedDays}");
+
+        var inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
+        inventory.DecreaseItemLives();
     }
 }
