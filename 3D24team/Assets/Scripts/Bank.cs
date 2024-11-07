@@ -6,6 +6,8 @@ public class Bank : MonoBehaviour
 {
     public int balance;
 
+    public bool Bankrupted => balance <= 0;
+
     void Start()
     {
         UpdateText();

@@ -33,8 +33,8 @@ public class TimeControl : MonoBehaviour
             }
             isSwitchingScene = true;
 
-            var SceneRouter = GetComponent<SceneRouter>();
             var clockText = GetComponent<ClockText>();
+            var sceneRouter = GetComponent<SceneRouter>();
 
             // TODO: Smell code
             var inventory = GameObject.Find("Inventory").transform.Find("InventoryPanel").gameObject;
@@ -42,13 +42,22 @@ public class TimeControl : MonoBehaviour
 
             if (sceneName == "Scene1")
             {
-                await SceneRouter.GoToScene2();
+                var store = GameObject.Find("Store").transform.Find("StorePanel").gameObject;
+                store.SetActive(false);
+                await sceneRouter.GoToScene2();
                 sceneName = "Scene2";
                 clockText.Restart(scene2Duration);
             }
             else if (sceneName == "Scene2")
             {
-                await SceneRouter.GoToScene1();
+                if (CanLiquidate())
+                {
+                    await sceneRouter.GoToSceneEnd();
+                    sceneName = "SceneEnd";
+                    isSwitchingScene = false;
+                    return;
+                }
+                await sceneRouter.GoToScene1();
                 sceneName = "Scene1";
                 clockText.Restart(scene1Duration);
                 PastOneDay();
@@ -58,11 +67,23 @@ public class TimeControl : MonoBehaviour
         }
     }
 
-    void PastOneDay() {
+    void PastOneDay()
+    {
         elapsedDays++;
-        Debug.Log($"Elapsed days: {elapsedDays}");
+        Debug.Log($"Day {elapsedDays}");
 
         var inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         inventory.DecreaseItemLives();
+    }
+
+    bool CanLiquidate()
+    {
+        var bank = GameObject.Find("Bank").GetComponent<Bank>();
+        if (bank.Bankrupted)
+        {
+            Debug.LogWarning("Bankrupted");
+            return true;
+        }
+        return false;
     }
 }

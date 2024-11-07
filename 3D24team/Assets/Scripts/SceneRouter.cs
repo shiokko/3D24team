@@ -70,4 +70,23 @@ public class SceneRouter : MonoBehaviour
         isGoing = false;
         Debug.Log("Arrived at Scene2");
     }
+
+    public async Task GoToSceneEnd() {
+        if (isGoing)
+        {
+            return;
+        }
+        isGoing = true;
+
+        // Load the scene end asynchronously and wait until it's loaded
+        var loadSceneEnd = SceneManager.LoadSceneAsync("SceneEnd");
+        Debug.Log("Loading SceneEnd");
+        while (!loadSceneEnd.isDone)
+        {
+            await Task.Yield();
+        }
+
+        isGoing = false;
+        Debug.Log("Arrived at SceneEnd");
+    }
 }
