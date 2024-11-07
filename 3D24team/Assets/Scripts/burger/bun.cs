@@ -12,6 +12,9 @@ public class bun : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (!GameObject.Find("Inventory").GetComponent<Inventory>().PopOldestItem(tag)) {
+            return;
+        }
         isDragging = true;
         offset = transform.position - GetMouseWorldPosition();
         originalPosition = transform.position;
