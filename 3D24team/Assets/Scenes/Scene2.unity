@@ -2108,8 +2108,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1973175526}
+  m_Children: []
   m_Father: {fileID: 1911979226}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -2320,7 +2319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1911979223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2399,6 +2398,7 @@ RectTransform:
   - {fileID: 2135264822}
   - {fileID: 764999519}
   - {fileID: 1644581947}
+  - {fileID: 1973175526}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2902,11 +2902,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1644581947}
+  m_Father: {fileID: 1911979226}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00019225181, y: 0.00023511137}
+  m_AnchoredPosition: {x: -25.730957, y: -14.475555}
   m_SizeDelta: {x: 410.2575, y: 124.6025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2000521299
@@ -2953,14 +2953,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f1989ff47c7746cebc48f9d62a3a6a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverText: {fileID: 1973175524}
-  gameOverImage: {fileID: 1644581949}
   customerPrefab: {fileID: 7522572828095737375, guid: 914f37e30ea5f4f8bab2077fc2a1882e, type: 3}
   spawnPoints:
   - {fileID: 1276612181}
   - {fileID: 1467218938}
-  moneyText: {fileID: 2135264823}
-  money: 0
 --- !u!1 &2022493845
 GameObject:
   m_ObjectHideFlags: 0

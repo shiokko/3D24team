@@ -30,6 +30,14 @@ public class Bank : MonoBehaviour
         return balance >= price;
     }
 
+    public bool TryLiquidate(int rent)
+    {
+        // Pay the rent to the bank
+        var bank = GameObject.Find("Bank").GetComponent<Bank>();
+        bank.Withdraw(rent);
+        return bank.Bankrupted;
+    }
+
     void UpdateText()
     {
         var balanceText = GetComponentInChildren<TextMeshProUGUI>();

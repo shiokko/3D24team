@@ -609,7 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene1Duration: 5
-  scene2Duration: 5
+  scene2Duration: 100
   sceneName: Scene1
 --- !u!114 &388565100
 MonoBehaviour:

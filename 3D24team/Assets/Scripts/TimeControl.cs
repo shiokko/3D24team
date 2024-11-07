@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -50,8 +51,11 @@ public class TimeControl : MonoBehaviour
             }
             else if (sceneName == "Scene2")
             {
-                if (CanLiquidate())
+                var rent = Mathf.FloorToInt(2f + Mathf.Pow(1.2f, elapsedDays));
+                var bank = GameObject.Find("Bank").GetComponent<Bank>();
+                if (bank.TryLiquidate(rent))
                 {
+                    Debug.LogWarning("Bankrupted!");
                     await sceneRouter.GoToSceneEnd();
                     sceneName = "SceneEnd";
                     isSwitchingScene = false;
@@ -74,16 +78,5 @@ public class TimeControl : MonoBehaviour
 
         var inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         inventory.DecreaseItemLives();
-    }
-
-    bool CanLiquidate()
-    {
-        var bank = GameObject.Find("Bank").GetComponent<Bank>();
-        if (bank.Bankrupted)
-        {
-            Debug.LogWarning("Bankrupted");
-            return true;
-        }
-        return false;
     }
 }

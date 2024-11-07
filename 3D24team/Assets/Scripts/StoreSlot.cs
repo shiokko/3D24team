@@ -22,7 +22,7 @@ public class StoreSlot : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough money");
+            Debug.Log("Not affordable.");
         }
     }
 
