@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ClockText : MonoBehaviour
 {
-    public float offset;
+    public float timeOffset;
     public float timeScale;
 
     private float fromTime;
 
-    public float Duration => Math.Max((Time.fixedTime - fromTime) * timeScale + offset, 0f);
+    public float Duration => Math.Max((Time.fixedTime - fromTime) * timeScale + timeOffset, 0f);
 
     void Start()
     {
@@ -23,11 +23,11 @@ public class ClockText : MonoBehaviour
     }
 
     /// <summary>
-    /// Restart the clock with an offset
+    /// Restart the clock with an timeOffset
     /// </summary>
-    public void Restart(float offset)
+    public void Restart(float timeOffset)
     {
-        this.offset = offset;
+        this.timeOffset = timeOffset;
         Restart();
     }
 

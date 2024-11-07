@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Threading.Tasks;
+using System.Collections;
 
 public class SceneRouter : MonoBehaviour
 {
@@ -9,84 +9,112 @@ public class SceneRouter : MonoBehaviour
     void Start()
     {
         isGoing = false;
+        // Optional: Make SceneRouter persistent across scenes
+        // Uncomment the next line if you want the SceneRouter to persist
+        // DontDestroyOnLoad(this.gameObject);
     }
 
-    public async Task GoToScene1()
+    // Method to start coroutine for Scene1
+    public void GoToScene1()
     {
         if (isGoing)
         {
             return;
         }
+        StartCoroutine(GoToScene1Coroutine());
+    }
+
+    private IEnumerator GoToScene1Coroutine()
+    {
         isGoing = true;
 
-        // Load the SunRise scene asynchronously and wait until it's loaded
-        var loadSunRise = SceneManager.LoadSceneAsync("SunRise");
+        // Load the SunRise scene asynchronously
+        AsyncOperation loadSunRise = SceneManager.LoadSceneAsync("SunRise");
         Debug.Log("Loading SunRise and Scene1");
+
+        // Wait until SunRise is loaded
         while (!loadSunRise.isDone)
         {
-            await Task.Yield();
+            yield return null; // Wait for the next frame
         }
 
-        // Wait for 2 seconds before loading Scene1
-        await Task.Delay(2000);
+        // Wait for 2 seconds
+        yield return new WaitForSeconds(2f);
 
-        // Load Scene1 asynchronously and wait until it's loaded
-        var loadScene1 = SceneManager.LoadSceneAsync("Scene1");
+        // Load Scene1 asynchronously
+        AsyncOperation loadScene1 = SceneManager.LoadSceneAsync("Scene1");
         while (!loadScene1.isDone)
         {
-            await Task.Yield();
+            yield return null; // Wait for the next frame
         }
 
-        isGoing = false;
         Debug.Log("Arrived at Scene1");
+        isGoing = false;
     }
 
-    public async Task GoToScene2()
+    // Method to start coroutine for Scene2
+    public void GoToScene2()
     {
         if (isGoing)
         {
             return;
         }
-        isGoing = true;
-
-        // Load the SunFall scene asynchronously and wait until it's loaded
-        var loadSunFall = SceneManager.LoadSceneAsync("SunFall");
-        Debug.Log("Loading SunFall and Scene2");
-        while (!loadSunFall.isDone)
-        {
-            await Task.Yield();
-        }
-
-        // Wait for 2 seconds before loading Scene2
-        await Task.Delay(2000);
-
-        // Load Scene2 asynchronously and wait until it's loaded
-        var loadScene2 = SceneManager.LoadSceneAsync("Scene2");
-        while (!loadScene2.isDone)
-        {
-            await Task.Yield();
-        }
-
-        isGoing = false;
-        Debug.Log("Arrived at Scene2");
+        StartCoroutine(GoToScene2Coroutine());
     }
 
-    public async Task GoToSceneEnd() {
+    private IEnumerator GoToScene2Coroutine()
+    {
+        isGoing = true;
+
+        // Load the SunFall scene asynchronously
+        AsyncOperation loadSunFall = SceneManager.LoadSceneAsync("SunFall");
+        Debug.Log("Loading SunFall and Scene2");
+
+        // Wait until SunFall is loaded
+        while (!loadSunFall.isDone)
+        {
+            yield return null; // Wait for the next frame
+        }
+
+        // Wait for 2 seconds
+        yield return new WaitForSeconds(2f);
+
+        // Load Scene2 asynchronously
+        AsyncOperation loadScene2 = SceneManager.LoadSceneAsync("Scene2");
+        while (!loadScene2.isDone)
+        {
+            yield return null; // Wait for the next frame
+        }
+
+        Debug.Log("Arrived at Scene2");
+        isGoing = false;
+    }
+
+    // Method to start coroutine for SceneEnd
+    public void GoToSceneEnd()
+    {
         if (isGoing)
         {
             return;
         }
+        StartCoroutine(GoToSceneEndCoroutine());
+    }
+
+    private IEnumerator GoToSceneEndCoroutine()
+    {
         isGoing = true;
 
-        // Load the scene end asynchronously and wait until it's loaded
-        var loadSceneEnd = SceneManager.LoadSceneAsync("SceneEnd");
+        // Load the SceneEnd asynchronously
+        AsyncOperation loadSceneEnd = SceneManager.LoadSceneAsync("SceneEnd");
         Debug.Log("Loading SceneEnd");
+
+        // Wait until SceneEnd is loaded
         while (!loadSceneEnd.isDone)
         {
-            await Task.Yield();
+            yield return null; // Wait for the next frame
         }
 
-        isGoing = false;
         Debug.Log("Arrived at SceneEnd");
+        isGoing = false;
     }
 }

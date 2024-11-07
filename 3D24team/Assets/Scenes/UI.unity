@@ -608,8 +608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bc4eb74553474fc195265f4aec1d30d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene1Duration: 0
-  scene2Duration: 20
+  scene1Duration: 5
+  scene2Duration: 5
   sceneName: Scene1
 --- !u!114 &388565100
 MonoBehaviour:
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9754a15a0ba8043b9b1ead76151d5075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0
+  timeOffset: 5
   timeScale: -1
 --- !u!114 &388565101
 MonoBehaviour:

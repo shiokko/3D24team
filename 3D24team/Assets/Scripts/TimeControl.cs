@@ -9,6 +9,8 @@ public class TimeControl : MonoBehaviour
     private bool isSwitchingScene;
     private int elapsedDays;
 
+    public int Rent => Mathf.FloorToInt(2f + Mathf.Pow(1.2f, elapsedDays));
+
     void Start()
     {
         isSwitchingScene = false;
@@ -20,7 +22,7 @@ public class TimeControl : MonoBehaviour
         TrySwitchScene();
     }
 
-    async void TrySwitchScene()
+    void TrySwitchScene()
     {
         if (GetComponent<ClockText>().Duration == 0)
         {
@@ -41,25 +43,25 @@ public class TimeControl : MonoBehaviour
             {
                 var store = GameObject.Find("Store").transform.Find("StorePanel").gameObject;
                 store.SetActive(false);
-                await sceneRouter.GoToScene2();
+                sceneRouter.GoToScene2();
                 sceneName = "Scene2";
-                clockText.Restart(scene2Duration);
+                // TODO: We can't perform synchronization in WASM, everything is async
+                clockText.Restart(scene2Duration + 2.3f);
             }
             else if (sceneName == "Scene2")
             {
-                var rent = Mathf.FloorToInt(2f + Mathf.Pow(1.2f, elapsedDays));
                 var bank = GameObject.Find("Bank").GetComponent<Bank>();
-                if (bank.TryLiquidate(rent))
+                if (bank.TryLiquidate(Rent))
                 {
                     Debug.LogWarning("Bankrupted!");
-                    await sceneRouter.GoToSceneEnd();
+                    sceneRouter.GoToSceneEnd();
                     sceneName = "SceneEnd";
                     isSwitchingScene = false;
                     return;
                 }
-                await sceneRouter.GoToScene1();
+                sceneRouter.GoToScene1();
                 sceneName = "Scene1";
-                clockText.Restart(scene1Duration);
+                clockText.Restart(scene1Duration + 2.3f);
                 PastOneDay();
             }
 
