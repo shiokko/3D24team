@@ -1,8 +1,4 @@
-using System;
-using System.Threading;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TimeControl : MonoBehaviour
 {
