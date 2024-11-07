@@ -5,6 +5,7 @@ public class ChefAttack : MonoBehaviour
 {
     public GameObject cattleCowPrefab;
     public GameObject cattlePigPrefab;
+    public ParticleSystem bloodParticle;
 
     private bool isAttacking;
 
@@ -42,6 +43,7 @@ public class ChefAttack : MonoBehaviour
     {
         if (isAttacking && other.CompareTag("cattle") && other.TryGetComponent<CattleGeneric>(out var cattle))
         {
+            PlayAttackEffect();
             cattle.Kill();
             RespawnCattle();
         }
@@ -116,7 +118,7 @@ public class ChefAttack : MonoBehaviour
     void RespawnCattle()
     {
         float p = Mathf.Sqrt(-Mathf.Log(Random.value)) * Mathf.Cos(Mathf.PI * Random.value);
-        var newTransform = GameObject.Find("CattleSpawner").transform;
+        var newTransform = GameObject.Find("CattleSpawnpoint").transform;
         if (p > 0.583f)
         {
             Instantiate(cattleCowPrefab, newTransform.position, newTransform.rotation);
@@ -125,5 +127,10 @@ public class ChefAttack : MonoBehaviour
         {
             Instantiate(cattlePigPrefab, newTransform.position, newTransform.rotation);
         }
+    }
+
+    void PlayAttackEffect()
+    {
+        bloodParticle.Play();
     }
 }
