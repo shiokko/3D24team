@@ -42,9 +42,13 @@ public class ChefAttack : MonoBehaviour
             cattle.Kill();
         }
 
-        if (isAttacking && other.CompareTag("bus") && other.TryGetComponent<Bus>(out var bus))
+        // TODO: Smell code
+        if (isAttacking && other.CompareTag("store"))
         {
-            bus.TakeToScene2();
+            var inventory = GameObject.Find("InventoryPanel");
+            var store = GameObject.Find("StorePanel");
+            inventory.SetActive(false);
+            store.SetActive(!store.activeSelf);
         }
 
         if (other.CompareTag("loot"))

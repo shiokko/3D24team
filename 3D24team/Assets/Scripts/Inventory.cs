@@ -16,7 +16,10 @@ public class Inventory : MonoBehaviour
     {
         UpdatePanel();
         var panel = transform.Find("InventoryPanel");
-        panel.gameObject.SetActive(false);
+        if (panel != null)
+        {
+            panel.gameObject.SetActive(false);
+        }
     }
 
     void Update()
@@ -25,7 +28,10 @@ public class Inventory : MonoBehaviour
         {
             // Toggle visibility of the intermediate object
             var panel = transform.Find("InventoryPanel");
-            panel.gameObject.SetActive(!panel.gameObject.activeSelf);
+            if (panel != null)
+            {
+                panel.gameObject.SetActive(!panel.gameObject.activeSelf);
+            }
 
 #if UNITY_EDITOR
             // Print the collected items
@@ -95,8 +101,12 @@ public class Inventory : MonoBehaviour
     private void UpdatePanel()
     {
         var panel = transform.Find("InventoryPanel");
-        InventorySlot[] slots = panel.GetComponentsInChildren<InventorySlot>();
+        if (panel == null)
+        {
+            return;
+        }
 
+        InventorySlot[] slots = panel.GetComponentsInChildren<InventorySlot>();
         foreach (var slot in slots)
         {
             var count = items.Count(i => slot.CompareTag(i.Name));
@@ -104,8 +114,6 @@ public class Inventory : MonoBehaviour
         }
     }
 }
-
-// TODO: Please, do not add the slot class back!!!!!!
 
 public class Item
 {

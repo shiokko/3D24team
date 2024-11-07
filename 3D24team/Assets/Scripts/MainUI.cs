@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainUI : MonoBehaviour
 {
-    void Start()
+    void Awake()
     {
         DontDestroyOnLoad(gameObject);
+        SceneManager.LoadScene("Scene1");
     }
 }
