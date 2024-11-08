@@ -27,12 +27,12 @@ TagManager:
   - bus
   - store
   - loot
+  - noodle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
   - Character
-  - food
   - Water
   - UI
   - TransparentBuild

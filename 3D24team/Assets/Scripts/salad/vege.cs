@@ -16,6 +16,7 @@ public class raw_vege : MonoBehaviour
     {
         isInBasket = true;
         isWashed = false;
+        gameObject.SetActive(GameObject.Find("Inventory").GetComponent<Inventory>().HasItem(tag));
     }
 
     void OnMouseDown()
@@ -23,7 +24,7 @@ public class raw_vege : MonoBehaviour
         isDragging = true;
         offset = transform.position - GetMouseWorldPosition();
         originalPosition = transform.position;
-        if (isInBasket)
+        if (isInBasket && GameObject.Find("Inventory").GetComponent<Inventory>().PopOldestItem(tag))
         {
             Instantiate(prefab_raw, transform.position, Quaternion.identity);
             isInBasket = false;

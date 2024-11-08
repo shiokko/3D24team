@@ -10,12 +10,17 @@ public class bun : MonoBehaviour
     private Vector3 offset;
     private Vector3 originalPosition;
 
+    void Start()
+    {
+        gameObject.SetActive(GameObject.Find("Inventory").GetComponent<Inventory>().HasItem(tag));
+    }
+
     void OnMouseDown()
     {
         isDragging = true;
         offset = transform.position - GetMouseWorldPosition();
         originalPosition = transform.position;
-        if (isInBowl)
+        if (isInBowl && GameObject.Find("Inventory").GetComponent<Inventory>().PopOldestItem(tag))
         {
             Instantiate(prefab_raw, transform.position, Quaternion.identity);
             isInBowl = false;

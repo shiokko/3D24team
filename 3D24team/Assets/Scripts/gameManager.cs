@@ -6,45 +6,45 @@ using TMPro;
 
 public class gameManager : MonoBehaviour
 {
-    public float timer = 180f;
-    private float timeLeft;
-    public TextMeshProUGUI timerText;
-    public TextMeshProUGUI gameOverText;
-    public Image gameOverImage;
+    // public float timer = 180f;
+    // private float timeLeft;
+    // public TextMeshProUGUI timerText;
+    // public TextMeshProUGUI gameOverText;
+    // public Image gameOverImage;
 
     public GameObject customerPrefab;
     private List<string> menuItems = new List<string>();
     public Transform[] spawnPoints;
     private string orderedItem = "";
 
-    public TextMeshProUGUI moneyText;
-    public int money = 0;
+    // public TextMeshProUGUI moneyText;
+    // public int money = 0;
 
     void Start()
     {
         // Debug.Log("Start() called.");
-        timeLeft = timer;
-        timerText.text = "Time Left: " + Mathf.Round(timeLeft) + "s";
-        gameOverText.gameObject.SetActive(false);
-        gameOverImage.gameObject.SetActive(false);
+        // timeLeft = timer;
+        // timerText.text = "Time Left: " + Mathf.Round(timeLeft) + "s";
+        // gameOverText.gameObject.SetActive(false);
+        // gameOverImage.gameObject.SetActive(false);
         menuItems = new List<string> { "BeefBurger", "PorkBurger", "salad"};
         StartCoroutine(SpawnCustomers());
-        UpdateMoneyText();
+        // UpdateMoneyText();
     }
 
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        timerText.text = "Time Left: " + Mathf.Round(timeLeft) + "s";
+        // timeLeft -= Time.deltaTime;
+        // timerText.text = "Time Left: " + Mathf.Round(timeLeft) + "s";
 
-        if (timeLeft <= 0)
-        {
-            timerText.text = "Time Left: " + Mathf.Round(timeLeft);
-            gameOverImage.gameObject.SetActive(true);
-            gameOverText.gameObject.SetActive(true);
-            gameOverText.text = "The day is over!\n You earned $" + money + " a day!";
-            Time.timeScale = 0;
-        }
+        // if (timeLeft <= 0)
+        // {
+        //     timerText.text = "Time Left: " + Mathf.Round(timeLeft);
+        //     gameOverImage.gameObject.SetActive(true);
+        //     gameOverText.gameObject.SetActive(true);
+        //     gameOverText.text = "The day is over!\n You earned $" + money + " a day!";
+        //     Time.timeScale = 0;
+        // }
     }
 
     private int GetAvailableSpawnPointIndex()
@@ -125,10 +125,10 @@ public class gameManager : MonoBehaviour
         }
     }
 
-    void UpdateMoneyText()
-    {
-        moneyText.text = "$ " + money;
-    }
+    // void UpdateMoneyText()
+    // {
+    //     moneyText.text = "$ " + money;
+    // }
 
     public void UpdateMoney(string orderedItem)
     {
@@ -146,7 +146,13 @@ public class gameManager : MonoBehaviour
         {
             earnings = 40; 
         }
-        money += earnings;
-        UpdateMoneyText();
+
+        // money += earnings;
+        // UpdateMoneyText();
+
+        // TODO: Update money
+
+        GameObject.Find("Bank").GetComponent<Bank>().Deposit(earnings);
+        Debug.Log("Earnings: " + earnings);
     }
 }

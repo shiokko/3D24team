@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 5934338673194716620}
   - component: {fileID: 7196311179966247268}
   - component: {fileID: 2005812609632186996}
-  - component: {fileID: 1582876954043682924}
   - component: {fileID: 3906071922961411527}
+  - component: {fileID: 6807073435102412784}
   m_Layer: 3
   m_Name: CattlePig
   m_TagString: cattle
@@ -244,19 +244,6 @@ MonoBehaviour:
   moveSpeed: 3
   wanderingDuration: 0.6
   wanderProbability: 0.2
---- !u!114 &1582876954043682924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4368131812892722399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a827563fa3f74cdf8201796ba8cc71f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isKilled: 0
 --- !u!114 &3906071922961411527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,4 +257,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 2
-  Name: pork
+  Name: rawPork
+--- !u!114 &6807073435102412784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4368131812892722399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a827563fa3f74cdf8201796ba8cc71f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isKilled: 0
+  cattleCowPrefab: {fileID: 0}
+  cattlePigPrefab: {fileID: 0}

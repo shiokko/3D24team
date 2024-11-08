@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 public class ChefAttack : MonoBehaviour
 {
+    public GameObject cattleCowPrefab;
+    public GameObject cattlePigPrefab;
+    public ParticleSystem bloodParticle;
+
     private bool isAttacking;
 
     // Current loots being attacked
@@ -24,7 +28,7 @@ public class ChefAttack : MonoBehaviour
         int aniState = GetComponent<Animator>().GetInteger("State");
 
         // Press K to attack with the chef
-        isAttacking = Input.GetKey(KeyCode.K);
+        isAttacking = Input.GetKey(KeyCode.F);
 
         // Specify the attack animation based on the attack state
         aniState = isAttacking ? 2 : (aniState == 2 ? 1 : aniState);
@@ -39,12 +43,18 @@ public class ChefAttack : MonoBehaviour
     {
         if (isAttacking && other.CompareTag("cattle") && other.TryGetComponent<CattleGeneric>(out var cattle))
         {
+            PlayAttackEffect();
             cattle.Kill();
+            RespawnCattle();
         }
 
-        if (isAttacking && other.CompareTag("bus") && other.TryGetComponent<Bus>(out var bus))
+        // TODO: Smell code
+        if (isAttacking && other.CompareTag("store"))
         {
-            bus.TakeToScene("Scene2");
+            var inventory = GameObject.Find("Inventory").transform.Find("InventoryPanel").gameObject;
+            inventory.SetActive(false);
+            var store = GameObject.Find("Store").transform.Find("StorePanel").gameObject;
+            store.SetActive(true);
         }
 
         if (other.CompareTag("loot"))
@@ -69,9 +79,9 @@ public class ChefAttack : MonoBehaviour
                         lootingStartTimes.Remove(loot);
 
                         // Add the loot name to the inventory and destroy it
-                        if (TryGetComponent<ChefInventory>(out var inventory))
+                        if (GameObject.Find("Inventory").TryGetComponent<Inventory>(out var inventory))
                         {
-                            inventory.AddLoot(loot.Name);
+                            inventory.AddItem(loot.Name);
                             Destroy(loot.gameObject);
                         }
                     }
@@ -97,5 +107,30 @@ public class ChefAttack : MonoBehaviour
                 lootingStartTimes.Remove(loot);
             }
         }
+
+        if (other.CompareTag("store"))
+        {
+            var store = GameObject.Find("Store").transform.Find("StorePanel").gameObject;
+            store.SetActive(false);
+        }
+    }
+
+    void RespawnCattle()
+    {
+        float p = Mathf.Sqrt(-Mathf.Log(Random.value)) * Mathf.Cos(Mathf.PI * Random.value);
+        var newTransform = GameObject.Find("CattleSpawnpoint").transform;
+        if (p > 0.583f)
+        {
+            Instantiate(cattleCowPrefab, newTransform.position, newTransform.rotation);
+        }
+        else if (p < -0.583f)
+        {
+            Instantiate(cattlePigPrefab, newTransform.position, newTransform.rotation);
+        }
+    }
+
+    void PlayAttackEffect()
+    {
+        bloodParticle.Play();
     }
 }
